@@ -180,7 +180,7 @@ const Arrow = p => <Ic {...p} d={<path d="M5 12h14m0 0-6-6m6 6-6 6" />} />;
 // ─── content ─────────────────────────────────────────────────
 const AUDIENCES = [
   { n: "01", h: "I run a small business",
-    b: "You've got a website, customer data and no security team. You want to know whether you're exposed — without being sold something you don't understand." },
+    b: "You've got a website, customer data and no security team. You want to know whether you're exposed, without being sold something you don't understand." },
   { n: "02", h: "I'm building a fintech",
     b: "Your enterprise customers are asking for a penetration test report. Your investors will ask next. You need it done properly, and done soon." },
   { n: "03", h: "I own security at a financial institution",
@@ -189,7 +189,7 @@ const AUDIENCES = [
 
 const SERVICES = [
   { h: "Penetration testing",
-    b: "We attempt to compromise your systems under controlled conditions — external infrastructure, internal networks, web applications and APIs. Every finding is ranked by real business impact rather than raw severity score, with exact reproduction steps and a specific fix." },
+    b: "We attempt to compromise your systems under controlled conditions across external infrastructure, internal networks, web applications and APIs. Every finding is ranked by real business impact rather than raw severity score, with exact reproduction steps and a specific fix." },
   { h: "Red team engagements",
     b: "A penetration test asks whether a vulnerability exists. A red team asks whether your people, processes and detection would actually stop a determined attacker. We work to a defined objective, stay quiet, and report on what your defenders saw and missed." },
   { h: "Credential exposure assessment",
@@ -199,26 +199,28 @@ const SERVICES = [
 ];
 
 const CAPABILITIES = [
-  { k: "01", h: "Web application", b: "Authentication, authorisation, session handling, injection, and the business logic flaws scanners never find." },
-  { k: "02", h: "Mobile application", b: "iOS and Android. Static and dynamic analysis, insecure storage, certificate pinning, and the backend the app talks to." },
-  { k: "03", h: "API", b: "REST and GraphQL. Broken object-level authorisation, mass assignment, rate limiting, and undocumented endpoints." },
-  { k: "04", h: "Cloud configuration", b: "AWS, Azure and GCP. IAM over-permissioning, exposed storage, network boundaries, and misconfigured managed services." },
-  { k: "05", h: "Active Directory", b: "Internal network and domain assessment. Privilege escalation paths, Kerberos attacks, delegation abuse, and lateral movement." },
-  { k: "06", h: "Application security", b: "Threat modelling, secure design review, and building security into the development process rather than testing it in afterwards." },
-  { k: "07", h: "Secure code review", b: "Manual review of source code for vulnerabilities that only appear in the implementation, not the running application." },
-  { k: "08", h: "IoT and firmware", b: "Embedded devices and their firmware. Extraction and analysis, hardcoded secrets, insecure update mechanisms, and physical interfaces." },
+  { k: "01", h: "Web application", b: "Authentication, authorisation, session handling and injection, and the business logic flaws no scanner will ever find." },
+  { k: "02", h: "External network", b: "Everything you expose to the internet, intended or forgotten. Perimeter services, exposed interfaces and the assets you did not know were public." },
+  { k: "03", h: "Internal network", b: "The view from inside. How far an attacker who gains a foothold can move, and what stops them if anything does." },
+  { k: "04", h: "API", b: "REST and GraphQL. Broken object level authorisation, mass assignment, rate limiting and the undocumented endpoints that never make the spec." },
+  { k: "05", h: "Active Directory", b: "Domain assessment against the techniques that matter: privilege escalation paths, Kerberos attacks, delegation abuse and lateral movement." },
+  { k: "06", h: "Mobile application", b: "iOS and Android. Static and dynamic analysis, insecure storage, certificate pinning and the backend the app actually talks to." },
+  { k: "07", h: "Cloud security", b: "AWS, Azure and GCP. IAM over permissioning, exposed storage, weak network boundaries and misconfigured managed services." },
+  { k: "08", h: "Application security", b: "Threat modelling and secure design review. Building security into how software is made rather than testing it in afterwards." },
+  { k: "09", h: "Secure code review", b: "Manual review of source for the vulnerabilities that live in the implementation and never surface in the running application." },
+  { k: "10", h: "IoT and firmware", b: "Embedded devices and the firmware inside them. Extraction and analysis, hardcoded secrets, weak update mechanisms and physical interfaces." },
 ];
 
 const PROCESS = [
   { h: "Scope", b: "A conversation, not a sales call. We establish what you're worried about, what's in scope, and what a good outcome looks like. You get a fixed written proposal with a fixed price." },
-  { h: "Test", b: "We work to the agreed scope and timeline with a named point of contact throughout. Anything critical is reported the moment we find it — you never wait for the report to learn your building is on fire." },
+  { h: "Test", b: "We work to the agreed scope and timeline with a named point of contact throughout. Anything critical is reported the moment we find it. You never wait for the report to learn your building is on fire." },
   { h: "Report", b: "Two documents. An executive summary your board or your customers can read, and a technical report your engineers can act on. Every finding carries reproduction steps, business impact and a specific remediation." },
   { h: "Retest", b: "Once you've fixed things, we verify the fixes at no additional cost. You finish with a clean report you can show to whoever asked for one." },
 ];
 
 const CREDS = [
-  ["Certification", "PNPT — Practical Network Penetration Tester, TCM Security. A fully practical five-day examination against live networks, assessed on the written report as well as the compromise."],
-  ["Education", "BSc (Hons) Cybersecurity, 2:1 — University of Kent."],
+  ["Certification", "PNPT, the Practical Network Penetration Tester qualification from TCM Security. A fully practical five-day examination against live networks, assessed on the written report as well as the compromise."],
+  ["Education", "BSc (Hons) Cybersecurity, 2:1, University of Kent."],
   ["Methodology", "Engagements follow the OWASP Testing Guide and the Penetration Testing Execution Standard."],
   ["Confidentiality", "NDA before scoping, not after. Findings remain confidential indefinitely, in writing. Client names are never published without written permission."],
   ["Evidence handling", "Findings stored encrypted, retained for an agreed period, destroyed on schedule. Credentials discovered during testing are never stored in plaintext or reproduced in reports."],
@@ -258,7 +260,7 @@ export default function App() {
       <section id="top" className="hero">
         <div className="wrap">
           <div className="eyebrow">Penetration testing · Red team · Kent, UK</div>
-          <h1>Find out how someone would break in — before they do.</h1>
+          <h1>Find out how someone would break in, before they do.</h1>
           <div className="hero-rule" />
           <p className="lede">
             UltEnterprise is an independent penetration testing and red team consultancy working with
@@ -273,7 +275,7 @@ export default function App() {
           </div>
 
           <div className="trust">
-            {[["Certified", "PNPT — TCM Security"],
+            {[["Certified", "PNPT, TCM Security"],
               ["Educated", "BSc Cybersecurity, Kent"],
               ["Based", "Kent, United Kingdom"],
               ["Engagements", "SME · Fintech · Financial services"]].map(([k, v]) => (
@@ -366,14 +368,14 @@ export default function App() {
           </h2>
           <p className="lede" style={{ marginBottom: 30 }}>
             CredShield is our credential exposure intelligence platform. Enter a company domain and it
-            shows every record circulating for it — what leaked, where it's being traded, how the
+            shows every record circulating for it: what leaked, where it's being traded, how the
             passwords were stored, and crucially how long it has been available to buy. It then generates
             a prioritised remediation plan and maps each finding to the regulatory obligations it triggers.
           </p>
 
           <div className="stats" style={{ margin: "40px 0" }}>
             {[["292", "days is the average lifespan of a breach involving stolen credentials"],
-              ["3", "capabilities — exposure lookup, remediation planning, regulatory mapping"],
+              ["3", "capabilities: exposure lookup, remediation planning, regulatory mapping"],
               ["Free", "domain scan, no account needed"]].map(([n, l]) => (
               <div key={l}>
                 <div className="stat-n">{n}</div>
@@ -434,7 +436,7 @@ export default function App() {
           <h2 style={{ fontSize: 36, marginBottom: 18 }}>Not sure what you need?</h2>
           <p className="lede" style={{ margin: "0 auto 32px", textAlign: "center" }}>
             Most people aren't, at first. A scoping call takes thirty minutes, costs nothing, and you'll
-            leave it knowing what testing would actually be useful for your situation — even if that
+            leave it knowing what testing would actually be useful for your situation, even if that
             turns out to be nothing right now.
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
